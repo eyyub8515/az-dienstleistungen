@@ -6,7 +6,7 @@
   <title>AZ - Dienstleistungen</title>
   <meta name="description" content="AZ - Dienstleistungen – Entrümpelung, Reinigung, Renovierung und Hausmeisterservice in Göppingen, Esslingen und Umgebung." />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCSZMTTBY2"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCSZMTTBY2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -523,33 +523,6 @@
       transform: translateY(-2px);
     }
 
-    .cookie-banner {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #ffffff;
-      padding: 16px 20px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      max-width: 500px;
-      width: calc(100% - 40px);
-      z-index: 9999;
-      display: none;
-    }
-
-    .cookie-actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 12px;
-      flex-wrap: wrap;
-    }
-
-    .cookie-actions button {
-      flex: 1;
-      min-width: 140px;
-    }
-
     @media (max-width: 1080px) {
       .hero-grid,
       .cta-panel,
@@ -908,117 +881,136 @@
   </a>
 
   <div id="cookie-overlay" style="
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(4px);
-  z-index: 9998;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-"></div>
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  "></div>
 
-<div id="cookie-banner" style="
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.92);
-  width: min(500px, calc(100% - 30px));
-  z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-">
-  <div style="
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+  <div id="cookie-banner" style="
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.92);
+    width: min(500px, calc(100% - 30px));
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
   ">
-    <div style="text-align:center; margin-bottom:16px;">
-      <div style="font-size:28px;">🍪</div>
-      <div style="font-size:18px; font-weight:800; margin-top:6px;">
-        Datenschutz & Cookies
+    <div style="
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+    ">
+      <div style="text-align:center; margin-bottom:16px;">
+        <div style="font-size:28px;">🍪</div>
+        <div style="font-size:18px; font-weight:800; margin-top:6px;">
+          Datenschutz & Cookies
+        </div>
+      </div>
+
+      <div style="font-size:14px; color:#555; text-align:center; margin-bottom:20px;">
+        Wir verwenden Cookies und externe Dienste (z. B. Google Analytics),
+        um unsere Website zu verbessern.
+        <br><br>
+        <a href="datenschutz.html" style="color:#1d4ed8; font-weight:600;">
+          Datenschutzerklärung ansehen
+        </a>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <button onclick="acceptCookies()" style="
+          background: linear-gradient(135deg, #1d4ed8, #2563eb);
+          color:white;
+          border:none;
+          padding:14px;
+          border-radius:12px;
+          font-weight:800;
+          cursor:pointer;
+        ">
+          Alle akzeptieren
+        </button>
+
+        <button onclick="declineCookies()" style="
+          background:#f1f5f9;
+          border:none;
+          padding:14px;
+          border-radius:12px;
+          font-weight:800;
+          cursor:pointer;
+        ">
+          Nur notwendige Cookies
+        </button>
       </div>
     </div>
-
-    <div style="font-size:14px; color:#555; text-align:center; margin-bottom:20px;">
-      Wir verwenden Cookies und externe Dienste (z. B. Google Analytics),
-      um unsere Website zu verbessern.
-      <br><br>
-      <a href="datenschutz.html" style="color:#1d4ed8; font-weight:600;">
-        Datenschutzerklärung ansehen
-      </a>
-    </div>
-
-    <div style="display:flex; flex-direction:column; gap:10px;">
-      <button onclick="acceptCookies()" style="
-        background: linear-gradient(135deg, #1d4ed8, #2563eb);
-        color:white;
-        border:none;
-        padding:14px;
-        border-radius:12px;
-        font-weight:800;
-        cursor:pointer;
-      ">
-        Alle akzeptieren
-      </button>
-
-      <button onclick="declineCookies()" style="
-        background:#f1f5f9;
-        border:none;
-        padding:14px;
-        border-radius:12px;
-        font-weight:800;
-        cursor:pointer;
-      ">
-        Nur notwendige Cookies
-      </button>
-    </div>
   </div>
-</div>
-<script>
-  function showBanner() {
-    const banner = document.getElementById("cookie-banner");
-    const overlay = document.getElementById("cookie-overlay");
 
-    overlay.style.pointerEvents = "auto";
-    banner.style.pointerEvents = "auto";
+  <script>
+    function showBanner() {
+      const banner = document.getElementById("cookie-banner");
+      const overlay = document.getElementById("cookie-overlay");
 
-    requestAnimationFrame(() => {
-      overlay.style.opacity = "1";
-      banner.style.opacity = "1";
-      banner.style.transform = "translate(-50%, -50%) scale(1)";
-    });
-  }
+      overlay.style.pointerEvents = "auto";
+      banner.style.pointerEvents = "auto";
 
-  function hideBanner() {
-    const banner = document.getElementById("cookie-banner");
-    const overlay = document.getElementById("cookie-overlay");
-
-    overlay.style.opacity = "0";
-    banner.style.opacity = "0";
-    banner.style.transform = "translate(-50%, -50%) scale(0.92)";
-    overlay.style.pointerEvents = "none";
-    banner.style.pointerEvents = "none";
-  }
-
-  function acceptCookies() {
-    localStorage.setItem("cookiesAccepted", "true");
-    hideBanner();
-    setTimeout(() => location.reload(), 250);
-  }
-
-  function declineCookies() {
-    localStorage.setItem("cookiesAccepted", "false");
-    hideBanner();
-  }
-
-  window.addEventListener("load", function () {
-    if (!localStorage.getItem("cookiesAccepted")) {
-      showBanner();
+      requestAnimationFrame(() => {
+        overlay.style.opacity = "1";
+        banner.style.opacity = "1";
+        banner.style.transform = "translate(-50%, -50%) scale(1)";
+      });
     }
-  });
-</script>
+
+    function hideBanner() {
+      const banner = document.getElementById("cookie-banner");
+      const overlay = document.getElementById("cookie-overlay");
+
+      overlay.style.opacity = "0";
+      banner.style.opacity = "0";
+      banner.style.transform = "translate(-50%, -50%) scale(0.92)";
+      overlay.style.pointerEvents = "none";
+      banner.style.pointerEvents = "none";
+    }
+
+    function acceptCookies() {
+      localStorage.setItem("cookiesAccepted", "true");
+      hideBanner();
+      setTimeout(() => location.reload(), 250);
+    }
+
+    function declineCookies() {
+      localStorage.setItem("cookiesAccepted", "false");
+      hideBanner();
+    }
+
+    window.addEventListener("load", function () {
+      if (!localStorage.getItem("cookiesAccepted")) {
+        showBanner();
+      }
+    });
+  </script>
+
+  <script>
+    (function () {
+      try {
+        const key = 'az_counter';
+        let count = localStorage.getItem(key);
+        count = count ? parseInt(count, 10) + 1 : 1;
+        localStorage.setItem(key, String(count));
+
+        const counter = document.getElementById('visitor-counter');
+        if (counter) {
+          counter.textContent = count;
+        }
+      } catch (e) {
+        console.log('Besucherzähler Fehler:', e);
+      }
+    })();
+  </script>
 </body>
 </html>
