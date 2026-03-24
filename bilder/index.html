@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AZ - Dienstleistungen</title>
+  <meta name="description" content="AZ - Dienstleistungen – Entrümpelung, Reinigung, Renovierung und Hausmeisterservice in Göppingen, Esslingen und Umgebung." />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6B4LCVW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    const cookiesAccepted = localStorage.getItem("cookiesAccepted") === "true";
+
+    if (cookiesAccepted) {
+      gtag('js', new Date());
+      gtag('config', 'G-W6B4LCVW', {
+        anonymize_ip: true
+      });
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --dark: #0f172a;
+      --muted: #5b6475;
+      --line: rgba(15, 23, 42, 0.08);
+      --primary: #1d4ed8;
+      --primary-dark: #163ea9;
+      --accent: #25d366;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+      --shadow-soft: 0 12px 35px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.10), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 20px;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 70px 0 40px;
+      background: url('bilder/saubere-wohnung.jpg') center/cover no-repeat;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .hero > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1.05;
+      margin: 18px 0 18px;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #ffffff;
+      max-width: 660px;
+      margin: 0 0 28px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 16px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      box-shadow: var(--shadow-soft);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #1d4ed8 100%);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark);
+      border: 1px solid var(--line);
+    }
+
+    .btn-whatsapp {
+      background: var(--accent);
+      color: white;
+    }
+
+    .mini-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .mini-points li {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      padding: 11px 14px;
+      border-radius: 14px;
+      color: var(--muted);
+      font-weight: 600;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: var(--shadow);
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(29, 78, 216, 0.11), transparent 38%);
+      pointer-events: none;
+    }
+
+    .hero-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-block {
+      min-height: 180px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      position: relative;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .photo-block.large {
+      grid-column: span 2;
+      min-height: 230px;
+    }
+
+    .photo-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section {
+      padding: 36px 0;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .service-grid,
+    .benefit-grid,
+    .gallery-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .benefit-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      background: rgba(29, 78, 216, 0.10);
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .card ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .card ul li + li {
+      margin-top: 6px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 22px;
+    }
+
+    .benefit strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .check {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      background: rgba(37, 211, 102, 0.12);
+      color: #179c48;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 280px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cta-panel {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .cta-panel p {
+      color: rgba(255,255,255,0.78);
+      margin: 10px 0 0;
+      font-size: 1.04rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .contact-box {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 15px 16px;
+      border-radius: 18px;
+      background: #f8fbff;
+      border: 1px solid rgba(29, 78, 216, 0.08);
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .visitor-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      padding: 10px 14px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      width: fit-content;
+      margin-top: 8px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 999px;
+      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.34);
+      font-weight: 800;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-2px);
+    }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 16px 20px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 500px;
+      width: calc(100% - 40px);
+      z-index: 9999;
+      display: none;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-actions button {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .cta-panel,
+      .contact-grid,
+      .service-grid,
+      .benefit-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .service-grid,
+      .benefit-grid,
+      .gallery-grid,
+      .cta-panel,
+      .contact-grid,
+      .hero-photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-block.large {
+        grid-column: span 1;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .floating-whatsapp span {
+        display: none;
+      }
+
+      .floating-whatsapp {
+        width: 58px;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+      }
+
+      .footer-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <strong>AZ - Dienstleistungen</strong>
+        <span>Entrümpelung • Reinigung • Renovierung</span>
+      </div>
+      <div class="nav-links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#bilder">Bilder</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Schnell verfügbar • Faire Preise • Zuverlässiger Service</div>
+        <h1>AZ - Dienstleistungen<br>für Wohnung, Haus und Immobilie</h1>
+        <p>
+          Professioneller Komplettservice in Göppingen, Esslingen und Umgebung. Ob Renovierung,
+          Entrümpelung, Bauendreinigung oder laufende Betreuung – wir kümmern uns sauber,
+          schnell und zuverlässig um Ihren Auftrag.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#kontakt">Jetzt Anfrage senden</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/4915120600909?text=Hallo%20AZ%20-%20Dienstleistungen%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Angebot." target="_blank" rel="noopener noreferrer">WhatsApp schreiben</a>
+          <a class="btn btn-secondary" href="tel:+4915120600909">Jetzt anrufen</a>
+        </div>
+
+        <ul class="mini-points">
+          <li>✓ Kostenlose Besichtigung</li>
+          <li>✓ Kurzfristige Termine</li>
+          <li>✓ Alles aus einer Hand</li>
+          <li>✓ Privat & Gewerbe</li>
+        </ul>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-photo-grid">
+          <div class="photo-block large">
+            <img src="bilder/renovierung-1.jpg" alt="Renovierte Wohnung von AZ - Dienstleistungen">
+          </div>
+          <div class="photo-block">
+            <img src="bilder/entruempelung-1.jpg" alt="Entrümpelung von Garage oder Wohnung">
+          </div>
+          <div class="photo-block">
+            <img src="bilder/reinigung-1.jpg" alt="Reinigung nach Renovierung">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="leistungen">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Unsere Leistungen</div>
+        <h2>Alles aus einer Hand</h2>
+        <p>
+          Wir bieten Ihnen einen kompletten Service für Immobilien, Wohnungen, Häuser,
+          Keller, Garagen und Objekte jeder Art.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <div class="card">
+          <div class="icon">🧹</div>
+          <h3>Entrümpelung</h3>
+          <p>Wohnungsauflösung, Keller- und Garagenräumung sowie schnelle Entlastung bei leerstehenden Objekten.</p>
+          <ul>
+            <li>Wohnungen & Häuser</li>
+            <li>Keller & Garage</li>
+            <li>Schnell & diskret</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon">✨</div>
+          <h3>Reinigung</h3>
+          <p>Bauendreinigung, Grundreinigung und saubere Übergabe nach Renovierung oder Auflösung.</p>
+          <ul>
+            <li>Bauendreinigung</li>
+            <li>Grundreinigung</li>
+            <li>Bezugsfertige Übergabe</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎨</div>
+          <h3>Renovierung</h3>
+          <p>Streichen, kleine Reparaturen, Bodenarbeiten und optische Auffrischung von Räumen.</p>
+          <ul>
+            <li>Wände & Decken</li>
+            <li>Laminate & Böden</li>
+            <li>Kleine Instandsetzung</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon">🛠️</div>
+          <h3>Hausmeisterservice</h3>
+          <p>Regelmäßige Betreuung und Unterstützung rund um Gebäude, Treppenhaus und kleine Arbeiten.</p>
+          <ul>
+            <li>Objektbetreuung</li>
+            <li>Kleine Arbeiten</li>
+            <li>Pflege & Ordnung</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vorteile">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Warum AZ - Dienstleistungen?</div>
+        <h2>Professionell, klar und zuverlässig</h2>
+        <p>
+          Unsere Kunden suchen keine halben Lösungen, sondern einen Partner, der organisiert arbeitet,
+          sauber liefert und schnell reagiert.
+        </p>
+      </div>
+
+      <div class="benefit-grid">
+        <div class="card benefit">
+          <div class="check">✓</div>
+          <div>
+            <strong>Schnelle Terminvergabe</strong>
+            Kurzfristige Einsätze möglich – ideal bei dringenden Aufträgen.
+          </div>
+        </div>
+        <div class="card benefit">
+          <div class="check">✓</div>
+          <div>
+            <strong>Faire & transparente Preise</strong>
+            Klare Kommunikation und ein sauberes Angebot ohne unnötigen Stress.
+          </div>
+        </div>
+        <div class="card benefit">
+          <div class="check">✓</div>
+          <div>
+            <strong>Alles aus einer Hand</strong>
+            Weniger Aufwand für Sie, weil wir mehrere Leistungen kombinieren können.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bilder">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Eindrücke</div>
+        <h2>So kann Ihre Immobilie aussehen</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="bilder/vorher-nachher-wohnung.jpg" alt="Vorher und nachher renovierte Wohnung">
+        </div>
+        <div class="gallery-item">
+          <img src="bilder/garage-vorher-nachher.jpg" alt="Vorher und nachher von einer Garage">
+        </div>
+        <div class="gallery-item">
+          <img src="bilder/keller-vorher-nachher.jpg" alt="Vorher und nachher von einem Keller">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-panel">
+        <div>
+          <div class="eyebrow" style="color:#93c5fd; margin-bottom: 8px;">Kostenlose Besichtigung & Angebot</div>
+          <h2 style="margin-bottom:0;">Sie brauchen schnelle Hilfe?</h2>
+          <p>
+            Schreiben Sie uns direkt per WhatsApp oder rufen Sie uns an. Wir melden uns schnell zurück
+            und besprechen Ihren Auftrag unkompliziert.
+          </p>
+        </div>
+        <div class="cta-row" style="margin-bottom:0; justify-content:flex-start;">
+          <a class="btn btn-whatsapp" href="https://wa.me/4915120600909?text=Hallo%20AZ%20-%20Dienstleistungen%2C%20ich%20m%C3%B6chte%20eine%20kostenlose%20Besichtigung%20oder%20ein%20Angebot." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a class="btn btn-secondary" href="tel:+4915120600909">Anrufen</a>
+          <a class="btn btn-primary" href="mailto:info@az-dienstleistungen.com">E-Mail senden</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Kontakt</div>
+        <h2>Direkt erreichbar</h2>
+        <p>
+          Für Privatkunden, Vermieter, Hausverwaltungen und Gewerbe in Göppingen, Esslingen und Umgebung.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3 style="margin-top:0; font-size:1.4rem;">AZ - Dienstleistungen</h3>
+          <p style="margin: 0; color: var(--muted);">
+            Ihr Ansprechpartner für Renovierung, Entrümpelung und Reinigung.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>👤</div>
+              <div>
+                Inhaber
+                <small>Eyyub Alakbarov</small>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>📍</div>
+              <div>
+                Adresse
+                <small>Faurndauerstrasse 74, 73035 Göppingen</small>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>📞</div>
+              <div>
+                Telefon
+                <small>+49 1512 0600909</small>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>✉️</div>
+              <div>
+                E-Mail
+                <small>info@az-dienstleistungen.com</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-box" style="background: linear-gradient(135deg, rgba(29,78,216,0.06), rgba(37,211,102,0.06));">
+          <h3 style="margin-top:0; font-size:1.4rem;">Anfrage mit Bildern senden</h3>
+          <div class="contact-list">
+            <div class="contact-item"><div>📷</div><div>Bilder mitschicken<small></small></div></div>
+            <div class="contact-item"><div>✉️</div><div>E-Mail Anfrage<small></small></div></div>
+            <div class="contact-item"><div>📝</div><div>Kurz beschreiben<small></small></div></div>
+            <div class="contact-item"><div>⚡</div><div>Schnellere Antwort<small></small></div></div>
+          </div>
+          <div class="cta-row" style="margin-top:18px; margin-bottom:0;">
+            <a class="btn btn-primary" href="mailto:info@az-dienstleistungen.com?subject=Anfrage%20mit%20Bildern%20an%20AZ%20-%20Dienstleistungen&body=Hallo%20AZ%20-%20Dienstleistungen,%0D%0A%0D%0Aich%20m%C3%B6chte%20eine%20Anfrage%20senden.%20Ich%20werde%20Bilder%20vom%20Auftrag%20anh%C3%A4ngen.%0D%0A%0D%0AName:%0D%0ATelefon:%0D%0AOrt:%0D%0AWas%20soll%20gemacht%20werden:%0D%0A">Anfrage per E-Mail vorbereiten</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container footer">
+    <div class="footer-wrap">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div>© AZ - Dienstleistungen • Alle Rechte vorbehalten</div>
+        <div class="visitor-box">
+          <span style="font-size:1.1rem;">👁️</span>
+          <span style="font-weight:700; color:#0f172a;">Besucher:</span>
+          <span id="visitor-counter" style="font-weight:800; color:#1d4ed8;">0</span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; align-items:center;">
+        <a href="datenschutz.html" style="font-weight:600; color:#1d4ed8;">Datenschutz</a>
+        <a href="impressum.html" style="font-weight:600; color:#1d4ed8;">Impressum</a>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px; background:#ffffff; padding:8px 14px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+        <img src="bilder/logo.png" alt="AZ - Dienstleistungen Logo" style="height:256px;">
+      </div>
+    </div>
+  </div>
+
+  <a class="floating-whatsapp" href="https://wa.me/4915120600909?text=Hallo%20AZ%20-%20Dienstleistungen%2C%20ich%20habe%20Ihre%20Webseite%20gesehen%20und%20m%C3%B6chte%20mehr%20Infos." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kontakt">
+    <span>WhatsApp</span>
+    <strong>💬</strong>
+  </a>
+
+  <div id="cookie-overlay" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+"></div>
+
+<div id="cookie-banner" style="
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: min(500px, calc(100% - 30px));
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+">
+  <div style="
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+  ">
+    <div style="text-align:center; margin-bottom:16px;">
+      <div style="font-size:28px;">🍪</div>
+      <div style="font-size:18px; font-weight:800; margin-top:6px;">
+        Datenschutz & Cookies
+      </div>
+    </div>
+
+    <div style="font-size:14px; color:#555; text-align:center; margin-bottom:20px;">
+      Wir verwenden Cookies und externe Dienste (z. B. Google Analytics),
+      um unsere Website zu verbessern.
+      <br><br>
+      <a href="datenschutz.html" style="color:#1d4ed8; font-weight:600;">
+        Datenschutzerklärung ansehen
+      </a>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <button onclick="acceptCookies()" style="
+        background: linear-gradient(135deg, #1d4ed8, #2563eb);
+        color:white;
+        border:none;
+        padding:14px;
+        border-radius:12px;
+        font-weight:800;
+        cursor:pointer;
+      ">
+        Alle akzeptieren
+      </button>
+
+      <button onclick="declineCookies()" style="
+        background:#f1f5f9;
+        border:none;
+        padding:14px;
+        border-radius:12px;
+        font-weight:800;
+        cursor:pointer;
+      ">
+        Nur notwendige Cookies
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+  function showBanner() {
+    const banner = document.getElementById("cookie-banner");
+    const overlay = document.getElementById("cookie-overlay");
+
+    overlay.style.pointerEvents = "auto";
+    banner.style.pointerEvents = "auto";
+
+    requestAnimationFrame(() => {
+      overlay.style.opacity = "1";
+      banner.style.opacity = "1";
+      banner.style.transform = "translate(-50%, -50%) scale(1)";
+    });
+  }
+
+  function hideBanner() {
+    const banner = document.getElementById("cookie-banner");
+    const overlay = document.getElementById("cookie-overlay");
+
+    overlay.style.opacity = "0";
+    banner.style.opacity = "0";
+    banner.style.transform = "translate(-50%, -50%) scale(0.92)";
+    overlay.style.pointerEvents = "none";
+    banner.style.pointerEvents = "none";
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    hideBanner();
+    setTimeout(() => location.reload(), 250);
+  }
+
+  function declineCookies() {
+    localStorage.setItem("cookiesAccepted", "false");
+    hideBanner();
+  }
+
+  window.addEventListener("load", function () {
+    if (!localStorage.getItem("cookiesAccepted")) {
+      showBanner();
+    }
+  });
+</script>
+</body>
+</html>
