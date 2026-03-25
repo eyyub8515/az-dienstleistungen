@@ -86,7 +86,6 @@
       gap: 20px;
       padding: 16px 0;
     }
-
     .brand {
       display: flex;
       flex-direction: column;
@@ -483,12 +482,111 @@
       font-size: 0.95rem;
     }
 
+    .webmaster {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-top: 6px;
+      display: inline-block;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      color: #2563eb;
+      text-shadow: 1px 1px 0px #ffffff, 2px 2px 0px rgba(0,0,0,0.12);
+      transform: rotate(-1deg);
+      max-width: fit-content;
+    }
+
+    .webmaster:hover {
+      transform: rotate(1deg);
+    }
+
+    .webmaster::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #1d4ed8, #60a5fa);
+      transition: width 0.3s ease;
+    }
+
+    .webmaster:hover {
+      background-position: right center;
+      transform: translateY(-1px);
+    }
+
+    .webmaster:hover::after {
+      width: 100%;
+    }
+
     .footer-wrap {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1 1 320px;
+      min-width: 260px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .footer-links a {
+      font-weight: 600;
+      color: #1d4ed8;
+    }
+
+    .footer-logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 10px 18px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      flex: 0 0 auto;
+      min-width: 200px;
+    }
+
+    .footer-logo {
+      height: 180px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 8px 14px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      flex: 0 0 auto;
+    }
+
+    .footer-logo {
+      height: 256px;
+      width: auto;
+      display: block;
     }
 
     .visitor-box {
@@ -599,9 +697,11 @@
         <span>Entrümpelung • Transport • Umzüge • Reinigung • Renovierung</span>
       </div>
       <div class="nav-links">
+        
         <a href="#leistungen">Leistungen</a>
         <a href="#vorteile">Vorteile</a>
         <a href="#bilder">Bilder</a>
+        <a href="#einsatzorte">Einsatzorte</a>
         <a href="#kontakt">Kontakt</a>
       </div>
     </div>
@@ -777,6 +877,59 @@
     </div>
   </section>
 
+  <section id="einsatzorte">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Einsatzorte</div>
+        <h2>Wir sind in Ihrer Region im Einsatz</h2>
+        <p>
+          AZ - Dienstleistungen ist für Privatkunden, Vermieter, Hausverwaltungen und Gewerbe in Göppingen und Umgebung unterwegs.
+          Wir unterstützen Sie zuverlässig bei Entrümpelung, Transport, Umzügen, Reinigung und Renovierung.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Göppingen</h3>
+          <p>Entrümpelung, Transport, Umzüge, Reinigung und Renovierung direkt in Göppingen.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Esslingen</h3>
+          <p>Schnelle Hilfe in Esslingen und Umgebung für private und gewerbliche Aufträge.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Stuttgart</h3>
+          <p>Auch in Stuttgart übernehmen wir Entrümpelungen, Transporte und Umzüge zuverlässig.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Kirchheim unter Teck</h3>
+          <p>Service für Wohnungen, Häuser, Keller, Garagen und Objekte in Kirchheim unter Teck.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Geislingen</h3>
+          <p>Wir sind auch in Geislingen im Einsatz und helfen schnell und unkompliziert weiter.</p>
+        </div>
+      </div>
+
+      <div class="service-grid" style="margin-top:20px; grid-template-columns: repeat(1, 1fr);">
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Schwäbisch Gmünd</h3>
+          <p>AZ - Dienstleistungen unterstützt Kunden in Schwäbisch Gmünd bei Entrümpelung, Transport, Umzügen, Reinigung und Renovierung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="container">
       <div class="cta-panel">
@@ -867,24 +1020,28 @@
 
   <div class="container footer">
     <div class="footer-wrap">
-      <div style="display:flex; flex-direction:column; gap:8px;">
-        <div>© AZ - Dienstleistungen • Alle Rechte vorbehalten</div>
+      <div class="footer-left">
+                
+        <div class="footer-links">
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="impressum.html">Impressum</a>
+        </div>
+
         <div class="visitor-box">
           <span style="font-size:1.1rem;">👁️</span>
           <span style="font-weight:700; color:#0f172a;">Besucher:</span>
           <span id="visitor-counter" style="font-weight:800; color:#1d4ed8;">0</span>
         </div>
-        <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:8px;">
-          <a href="datenschutz.html" style="font-weight:600; color:#1d4ed8;">Datenschutz</a>
-          <a href="impressum.html" style="font-weight:600; color:#1d4ed8;">Impressum</a>
-        </div>
       </div>
 
-      <div style="display:flex; align-items:center; gap:10px; background:#ffffff; padding:8px 14px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
-        <img src="bilder/logo.png" alt="AZ - Dienstleistungen Logo" style="height:256px;">
+      <div class="footer-logo-box">
+        <img class="footer-logo" src="bilder/logo.png" alt="AZ - Dienstleistungen Logo">
       </div>
-    </div>
-  </div>
+
+      
+      </div>
+
+  <div class="footer-bottom">© AZ - Dienstleistungen • Alle Rechte vorbehalten</div>
 
   <a class="floating-whatsapp" href="https://wa.me/4915120600909?text=Hallo%20AZ%20-%20Dienstleistungen%2C%20ich%20habe%20Ihre%20Webseite%20gesehen%20und%20m%C3%B6chte%20mehr%20Infos." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kontakt">
     <span>WhatsApp</span>
