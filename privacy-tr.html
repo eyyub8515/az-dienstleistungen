@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gizlilik Politikası | AZ Hizmetleri</title>
+  <meta name="description" content="AZ Hizmetleri gizlilik politikası – Göppingen ve çevresi." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --dark: #0f172a;
+      --muted: #5b6475;
+      --line: rgba(15, 23, 42, 0.08);
+      --primary: #1d4ed8;
+      --shadow-soft: 0 12px 35px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.10), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.88);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(15, 23, 42, 0.08);
+      flex-wrap: wrap;
+    }
+
+    .lang-switch a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 34px;
+      padding: 0 10px;
+      border-radius: 10px;
+      background: rgba(29, 78, 216, 0.06);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid rgba(29, 78, 216, 0.10);
+      transition: all 0.2s ease;
+    }
+
+    .lang-switch a:hover {
+      color: var(--primary);
+      background: rgba(29, 78, 216, 0.12);
+    }
+
+    .lang-switch a.active {
+      background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .hero { padding: 56px 0 24px; }
+
+    .hero-card,
+    .content-card,
+    .contact-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card {
+      padding: 34px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(29, 78, 216, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(29, 78, 216, 0.12);
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      line-height: 1.08;
+      margin: 18px 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 800px;
+    }
+
+    .content-card { padding: 34px; }
+
+    h2 {
+      font-size: 1.55rem;
+      margin: 34px 0 12px;
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    p {
+      margin: 0 0 14px;
+      color: #243041;
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 20px;
+      color: #243041;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 8px;
+    }
+
+    .contact-card { padding: 22px; }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(29, 78, 216, 0.06);
+      border: 1px solid rgba(29, 78, 216, 0.10);
+      color: #243041;
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    @media (max-width: 760px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .hero-card, .content-card { padding: 24px; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+      .lang-switch {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="tr.html" class="brand">
+        <strong>AZ Hizmetleri</strong>
+        <span>Boşaltma • Nakliye • Taşınma • Temizlik • Tadilat</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="tr.html">Ana Sayfa</a>
+        <a href="impressum-tr.html">Yasal Bilgiler</a>
+        <a href="tel:+4915120600909">Ara</a>
+        <a href="https://wa.me/4915120600909" target="_blank" rel="noopener">WhatsApp</a>
+
+        <div class="lang-switch">
+          <a href="datenschutz.html">DE</a>
+          <a href="privacy.html">EN</a>
+          <a href="privacy-tr.html" class="active">TR</a>
+          <a href="privacy-ru.html">RU</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container">
+      <section class="hero-card">
+        <div class="badge">Gizlilik</div>
+        <h1>Gizlilik Politikası</h1>
+        <p>
+          Bu gizlilik politikası ile web sitemizde hangi kişisel verilerin işlendiği,
+          bu verilerin hangi amaçlarla kullanıldığı ve sizin hangi haklara sahip olduğunuz hakkında bilgi veriyoruz.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>1. Veri sorumlusu</h2>
+        <div class="info-grid">
+          <div class="contact-card">
+            <strong>AZ Hizmetleri</strong>
+            <p>Eyyub Alakbarov<br>Faurndauerstrasse 74<br>73035 Göppingen</p>
+          </div>
+          <div class="contact-card">
+            <strong>İletişim</strong>
+            <p>
+              Telefon: <a href="tel:+4915120600909">+49 1512 0600909</a><br>
+              E-posta: <a href="mailto:info@az-dienstleistungen.com">info@az-dienstleistungen.com</a>
+            </p>
+          </div>
+        </div>
+
+        <h2>2. Genel bilgiler</h2>
+        <p>
+          Web sitemizi ziyaret ettiğinizde kişisel verileriniz yalnızca gerekli olduğu ölçüde işlenir.
+          Bu, web sitesinin düzgün çalışması ve hizmetlerimizin sunulabilmesi için gereklidir.
+        </p>
+        <p>
+          Kişisel verilerin işlenmesi genellikle yalnızca ilgili kişinin onayı ile
+          veya yasal düzenlemeler izin verdiği takdirde yapılır.
+        </p>
+
+        <h2>3. Hosting ve sunucu log kayıtları</h2>
+        <p>Web sitemizi ziyaret ettiğinizde aşağıdaki bilgiler otomatik olarak kaydedilir:</p>
+        <ul>
+          <li>IP adresi</li>
+          <li>Tarih ve saat</li>
+          <li>Açılan sayfa veya dosya</li>
+          <li>Aktarılan veri miktarı</li>
+          <li>Tarayıcı türü ve sürümü</li>
+          <li>İşletim sistemi</li>
+          <li>Referrer URL</li>
+        </ul>
+        <p>
+          Bu veriler web sitesinin güvenli ve sorunsuz şekilde çalışması için işlenir.
+        </p>
+
+        <h2>4. Telefon, e-posta veya WhatsApp ile iletişim</h2>
+        <p>
+          Bizimle telefon, e-posta veya WhatsApp üzerinden iletişime geçtiğinizde,
+          paylaştığınız kişisel veriler yalnızca talebinizi işlemek ve sizinle iletişime geçmek için kullanılır.
+        </p>
+        <p>Bunlar özellikle şunlar olabilir:</p>
+        <ul>
+          <li>Ad</li>
+          <li>Telefon numarası</li>
+          <li>E-posta adresi</li>
+          <li>Adres / hizmet yeri</li>
+          <li>Talebinizin içeriği</li>
+          <li>İşe ilişkin gönderdiğiniz fotoğraflar veya diğer bilgiler</li>
+        </ul>
+
+        <h2>5. Siparişe ilişkin veriler</h2>
+        <p>
+          Bizden bir hizmet talep ettiğinizde veya sipariş verdiğinizde,
+          gerekli veriler teklif hazırlanması, hizmetin yürütülmesi ve siparişin tamamlanması için işlenir.
+        </p>
+        <p>Buna özellikle şunlar dahildir:</p>
+        <ul>
+          <li>İletişim bilgileri</li>
+          <li>Hizmet verilecek adres</li>
+          <li>Talep edilen hizmetin türü ve kapsamı</li>
+          <li>Tarih ve randevu bilgileri</li>
+          <li>Gerekirse işin kapsamını değerlendirmek için fotoğraflar</li>
+        </ul>
+
+        <h2>6. Çerezler (Cookies)</h2>
+        <p>
+          Web sitemiz çerezler kullanır. Çerezler, cihazınıza kaydedilen küçük metin dosyalarıdır.
+        </p>
+        <p>
+          Web sitesinin temel işlevlerini sağlamak için gerekli çerezleri kullanıyoruz.
+          Bunun yanında, onay verdiğiniz takdirde analiz amaçlı çerezler ve benzer teknolojiler de kullanılabilir.
+        </p>
+
+        <h2>7. Google Analytics</h2>
+        <p>
+          Onay vermeniz durumunda bu web sitesinde Google Analytics kullanılabilir.
+          Google Analytics, web sitesinin kullanımını analiz etmek için çerezlerden yararlanır.
+        </p>
+        <p>
+          Oluşturulan bilgiler genellikle Google sunucularına aktarılır ve orada saklanır.
+          Bu web sitesinde IP anonimleştirme etkinleştirilmiştir.
+        </p>
+
+        <h2>8. Hukuki dayanaklar</h2>
+        <p>Kişisel verileriniz özellikle şu hukuki dayanaklara göre işlenir:</p>
+        <ul>
+          <li>Açık rızanız</li>
+          <li>Sözleşme öncesi işlemler veya sözleşmenin yerine getirilmesi</li>
+          <li>Yasal yükümlülüklerin yerine getirilmesi</li>
+          <li>Güvenli ve işlevsel bir web sitesi sunmaya yönelik meşru menfaat</li>
+        </ul>
+
+        <h2>9. Saklama süresi</h2>
+        <p>
+          Kişisel veriler yalnızca ilgili amaç için gerekli olduğu sürece veya yasal saklama yükümlülükleri devam ettiği sürece saklanır.
+        </p>
+
+        <h2>10. Verilerin paylaşılması</h2>
+        <p>
+          Kişisel verileriniz yalnızca yasal olarak izin verildiğinde,
+          onayınız bulunduğunda veya sözleşmenin yerine getirilmesi için gerekli olduğunda üçüncü taraflara aktarılır.
+        </p>
+
+        <h2>11. Haklarınız</h2>
+        <ul>
+          <li>Bilgi alma hakkı</li>
+          <li>Düzeltme hakkı</li>
+          <li>Silme hakkı</li>
+          <li>İşlemenin sınırlandırılması hakkı</li>
+          <li>İtiraz etme hakkı</li>
+          <li>Veri taşınabilirliği hakkı</li>
+          <li>Verilen onayı geleceğe yönelik olarak geri çekme hakkı</li>
+          <li>Yetkili denetim makamına şikayette bulunma hakkı</li>
+        </ul>
+
+        <h2>12. Veri güvenliği</h2>
+        <p>
+          Verileriniz kayıp, kötüye kullanım, yetkisiz erişim veya diğer yetkisiz işlemlere karşı uygun teknik ve organizasyonel önlemlerle korunur.
+        </p>
+
+        <h2>13. Harici bağlantılar</h2>
+        <p>
+          Web sitemiz örneğin WhatsApp gibi harici web sitelerine veya hizmetlere bağlantılar içerebilir.
+          Harici sağlayıcıların içeriklerinden ve veri koruma uygulamalarından sorumlu değiliz.
+        </p>
+
+        <h2>14. Bu gizlilik politikasındaki değişiklikler</h2>
+        <p>
+          Bu gizlilik politikasını güncel yasal gerekliliklere uyarlamak veya hizmetlerimizde yapılan değişiklikleri yansıtmak amacıyla değiştirme hakkımız saklıdır.
+        </p>
+
+        <div class="note">Son güncelleme: Mart 2026</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>© 2026 AZ Hizmetleri • Tüm hakları saklıdır</div>
+      <div class="footer-links">
+        <a href="tr.html">Ana Sayfa</a>
+        <a href="impressum-tr.html">Yasal Bilgiler</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

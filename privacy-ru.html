@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Политика конфиденциальности | AZ Services</title>
+  <meta name="description" content="Политика конфиденциальности AZ Services в Гёппингене." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --dark: #0f172a;
+      --muted: #5b6475;
+      --line: rgba(15, 23, 42, 0.08);
+      --primary: #1d4ed8;
+      --primary-dark: #163ea9;
+      --accent: #25d366;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+      --shadow-soft: 0 12px 35px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.10), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.88);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(15, 23, 42, 0.08);
+      flex-wrap: wrap;
+    }
+
+    .lang-switch a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 34px;
+      padding: 0 10px;
+      border-radius: 10px;
+      background: rgba(29, 78, 216, 0.06);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid rgba(29, 78, 216, 0.10);
+      transition: all 0.2s ease;
+    }
+
+    .lang-switch a:hover {
+      color: var(--primary);
+      background: rgba(29, 78, 216, 0.12);
+    }
+
+    .lang-switch a.active {
+      background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .hero { padding: 56px 0 24px; }
+
+    .hero-card,
+    .content-card,
+    .contact-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card {
+      padding: 34px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(29, 78, 216, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(29, 78, 216, 0.12);
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      line-height: 1.08;
+      margin: 18px 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 800px;
+    }
+
+    .content-card { padding: 34px; }
+
+    h2 {
+      font-size: 1.55rem;
+      margin: 34px 0 12px;
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    p {
+      margin: 0 0 14px;
+      color: #243041;
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 20px;
+      color: #243041;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 8px;
+    }
+
+    .contact-card { padding: 22px; }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(29, 78, 216, 0.06);
+      border: 1px solid rgba(29, 78, 216, 0.10);
+      color: #243041;
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    @media (max-width: 760px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .hero-card, .content-card { padding: 24px; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+      .lang-switch {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="ru.html" class="brand">
+        <strong>AZ Services</strong>
+        <span>Вывоз • Транспорт • Переезды • Уборка • Ремонт</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="ru.html">Главная</a>
+        <a href="impressum-ru.html">Юридическая информация</a>
+        <a href="tel:+4915120600909">Позвонить</a>
+        <a href="https://wa.me/4915120600909" target="_blank" rel="noopener">WhatsApp</a>
+
+        <div class="lang-switch">
+          <a href="datenschutz.html">DE</a>
+          <a href="privacy.html">EN</a>
+          <a href="privacy-tr.html">TR</a>
+          <a href="privacy-ru.html" class="active">RU</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container">
+      <section class="hero-card">
+        <div class="badge">Конфиденциальность</div>
+        <h1>Политика конфиденциальности</h1>
+        <p>
+          В этой политике конфиденциальности мы информируем вас о том, какие персональные данные мы обрабатываем на нашем сайте,
+          с какими целями это делается и какими правами вы обладаете как субъект данных.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>1. Ответственное лицо</h2>
+        <div class="info-grid">
+          <div class="contact-card">
+            <strong>AZ Services</strong>
+            <p>Eyyub Alakbarov<br>Faurndauerstrasse 74<br>73035 Göppingen</p>
+          </div>
+          <div class="contact-card">
+            <strong>Контакты</strong>
+            <p>
+              Телефон: <a href="tel:+4915120600909">+49 1512 0600909</a><br>
+              E-Mail: <a href="mailto:info@az-dienstleistungen.com">info@az-dienstleistungen.com</a>
+            </p>
+          </div>
+        </div>
+
+        <h2>2. Общая информация об обработке данных</h2>
+        <p>
+          Мы обрабатываем персональные данные посетителей нашего сайта только в объёме, необходимом для предоставления работоспособного сайта,
+          обработки запросов, а также предоставления нашего контента и услуг.
+        </p>
+        <p>
+          Обработка персональных данных, как правило, осуществляется только с согласия субъекта данных или в случаях,
+          когда такая обработка разрешена законодательством.
+        </p>
+
+        <h2>3. Хостинг и серверные лог-файлы</h2>
+        <p>
+          При посещении нашего сайта хостинг-провайдер автоматически собирает и сохраняет информацию в так называемых серверных лог-файлах.
+          В частности, это:
+        </p>
+        <ul>
+          <li>IP-адрес запрашивающего устройства</li>
+          <li>дата и время доступа</li>
+          <li>открытая страница или файл</li>
+          <li>объём переданных данных</li>
+          <li>тип браузера и его версия</li>
+          <li>используемая операционная система</li>
+          <li>Referrer-URL</li>
+        </ul>
+        <p>
+          Обработка этих данных осуществляется для обеспечения бесперебойной работы сайта, а также стабильности и безопасности.
+        </p>
+
+        <h2>4. Связь по телефону, E-Mail или WhatsApp</h2>
+        <p>
+          Если вы связываетесь с нами по телефону, E-Mail или через WhatsApp, мы обрабатываем переданные вами персональные данные,
+          чтобы обработать ваш запрос и связаться с вами.
+        </p>
+        <p>В частности, это могут быть:</p>
+        <ul>
+          <li>имя</li>
+          <li>номер телефона</li>
+          <li>адрес электронной почты</li>
+          <li>адрес / место оказания услуги</li>
+          <li>содержание вашего запроса</li>
+          <li>переданные вами фотографии или иная информация по заказу</li>
+        </ul>
+
+        <h2>5. Обработка данных по заказам</h2>
+        <p>
+          Если вы запрашиваете или заказываете у нас услугу, мы обрабатываем необходимые для этого данные для подготовки,
+          выполнения и сопровождения заказа.
+        </p>
+        <p>К ним, в частности, относятся:</p>
+        <ul>
+          <li>контактные данные</li>
+          <li>адрес объекта или места выполнения работ</li>
+          <li>вид и объём желаемой услуги</li>
+          <li>данные о сроках и дате</li>
+          <li>при необходимости фотографии для оценки объёма работ</li>
+        </ul>
+
+        <h2>6. Cookies</h2>
+        <p>
+          Наш сайт использует cookies. Cookies — это небольшие текстовые файлы, которые сохраняются на вашем устройстве и содержат определённую информацию.
+        </p>
+        <p>
+          Мы используем необходимые cookies для обеспечения базовых функций сайта. Кроме того, при наличии вашего согласия
+          мы используем cookies и аналогичные технологии в аналитических целях.
+        </p>
+
+        <h2>7. Google Analytics</h2>
+        <p>
+          При наличии вашего согласия этот сайт использует Google Analytics — сервис веб-аналитики компании Google.
+          Google Analytics использует cookies, которые позволяют анализировать использование сайта.
+        </p>
+        <p>
+          Информация об использовании вами этого сайта, созданная с помощью cookies, как правило, передаётся на серверы Google и сохраняется там.
+          На этом сайте активирована анонимизация IP-адреса.
+        </p>
+
+        <h2>8. Правовые основания обработки</h2>
+        <p>Обработка ваших персональных данных осуществляется, в частности, на следующих правовых основаниях:</p>
+        <ul>
+          <li>согласие, если вы его явно дали</li>
+          <li>выполнение преддоговорных мер или договора</li>
+          <li>исполнение правовых обязательств</li>
+          <li>законный интерес в безопасном и работоспособном веб-сайте</li>
+        </ul>
+
+        <h2>9. Срок хранения</h2>
+        <p>
+          Персональные данные хранятся только до тех пор, пока это необходимо для достижения соответствующих целей
+          или пока существуют установленные законом обязательства по хранению.
+        </p>
+
+        <h2>10. Передача данных</h2>
+        <p>
+          Передача ваших персональных данных третьим лицам осуществляется только в том случае,
+          если это разрешено законом, вы дали согласие или передача необходима для исполнения договора.
+        </p>
+
+        <h2>11. Ваши права</h2>
+        <ul>
+          <li>право на получение информации</li>
+          <li>право на исправление неверных данных</li>
+          <li>право на удаление данных</li>
+          <li>право на ограничение обработки</li>
+          <li>право на возражение</li>
+          <li>право на переносимость данных</li>
+          <li>право отозвать согласие на будущее</li>
+          <li>право подать жалобу в компетентный орган</li>
+        </ul>
+
+        <h2>12. Безопасность данных</h2>
+        <p>
+          Мы принимаем соответствующие технические и организационные меры для защиты ваших данных.
+        </p>
+
+        <h2>13. Внешние ссылки</h2>
+        <p>
+          Наш сайт может содержать ссылки на внешние сайты или сервисы, например WhatsApp.
+          Мы не несём ответственности за содержание и практику защиты данных внешних поставщиков.
+        </p>
+
+        <h2>14. Изменения этой политики конфиденциальности</h2>
+        <p>
+          Мы оставляем за собой право изменять эту политику конфиденциальности,
+          чтобы она всегда соответствовала актуальным правовым требованиям.
+        </p>
+
+        <div class="note">Актуально на: март 2026</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>© 2026 AZ Services • Все права защищены</div>
+      <div class="footer-links">
+        <a href="ru.html">Главная</a>
+        <a href="impressum-ru.html">Юридическая информация</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

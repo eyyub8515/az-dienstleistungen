@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | AZ Services</title>
+  <meta name="description" content="Privacy Policy of AZ Services in Göppingen." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --dark: #0f172a;
+      --muted: #5b6475;
+      --line: rgba(15, 23, 42, 0.08);
+      --primary: #1d4ed8;
+      --primary-dark: #163ea9;
+      --accent: #25d366;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+      --shadow-soft: 0 12px 35px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.10), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.88);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 8px;
+      padding-left: 10px;
+      border-left: 1px solid rgba(15, 23, 42, 0.08);
+      flex-wrap: wrap;
+    }
+
+    .lang-switch a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 34px;
+      padding: 0 10px;
+      border-radius: 10px;
+      background: rgba(29, 78, 216, 0.06);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 1px solid rgba(29, 78, 216, 0.10);
+      transition: all 0.2s ease;
+    }
+
+    .lang-switch a:hover {
+      color: var(--primary);
+      background: rgba(29, 78, 216, 0.12);
+    }
+
+    .lang-switch a.active {
+      background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .hero { padding: 56px 0 24px; }
+
+    .hero-card,
+    .content-card,
+    .contact-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card {
+      padding: 34px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(29, 78, 216, 0.08);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(29, 78, 216, 0.12);
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      line-height: 1.08;
+      margin: 18px 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 800px;
+    }
+
+    .content-card { padding: 34px; }
+
+    h2 {
+      font-size: 1.55rem;
+      margin: 34px 0 12px;
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    p {
+      margin: 0 0 14px;
+      color: #243041;
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 20px;
+      color: #243041;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0 8px;
+    }
+
+    .contact-card { padding: 22px; }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(29, 78, 216, 0.06);
+      border: 1px solid rgba(29, 78, 216, 0.10);
+      color: #243041;
+    }
+
+    .footer {
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    @media (max-width: 760px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .hero-card, .content-card { padding: 24px; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+      .lang-switch {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="en.html" class="brand">
+        <strong>AZ Services</strong>
+        <span>Clearance • Transport • Moving • Cleaning • Renovation</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="en.html">Home</a>
+        <a href="legal-notice.html">Legal Notice</a>
+        <a href="tel:+4915120600909">Call</a>
+        <a href="https://wa.me/4915120600909" target="_blank" rel="noopener">WhatsApp</a>
+
+        <div class="lang-switch">
+          <a href="datenschutz.html">DE</a>
+          <a href="privacy.html" class="active">EN</a>
+          <a href="privacy-tr.html">TR</a>
+          <a href="privacy-ru.html">RU</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container">
+      <section class="hero-card">
+        <div class="badge">Privacy</div>
+        <h1>Privacy Policy</h1>
+        <p>
+          With this privacy policy, we inform you about which personal data we process on our website,
+          for what purposes this is done and which rights you have as a data subject.
+        </p>
+      </section>
+
+      <section class="content-card">
+        <h2>1. Controller</h2>
+        <div class="info-grid">
+          <div class="contact-card">
+            <strong>AZ Services</strong>
+            <p>Eyyub Alakbarov<br>Faurndauerstrasse 74<br>73035 Göppingen</p>
+          </div>
+          <div class="contact-card">
+            <strong>Contact</strong>
+            <p>
+              Phone: <a href="tel:+4915120600909">+49 1512 0600909</a><br>
+              E-mail: <a href="mailto:info@az-dienstleistungen.com">info@az-dienstleistungen.com</a>
+            </p>
+          </div>
+        </div>
+
+        <h2>2. General Information on Data Processing</h2>
+        <p>
+          We process personal data of visitors to our website only to the extent necessary to provide a functional website,
+          to handle inquiries and to provide our content and services.
+        </p>
+        <p>
+          Personal data is generally processed only with the consent of the data subject or where processing is permitted by law.
+        </p>
+
+        <h2>3. Hosting and Server Log Files</h2>
+        <p>
+          When you access our website, information is automatically collected and stored by the hosting provider in so-called server log files.
+          This includes in particular:
+        </p>
+        <ul>
+          <li>IP address of the requesting device</li>
+          <li>Date and time of access</li>
+          <li>Accessed page or file</li>
+          <li>Transferred data volume</li>
+          <li>Browser type and browser version</li>
+          <li>Operating system used</li>
+          <li>Referrer URL</li>
+        </ul>
+        <p>
+          This data is processed to ensure the smooth operation of the website and to guarantee stability and security.
+        </p>
+
+        <h2>4. Contact via Phone, E-mail or WhatsApp</h2>
+        <p>
+          If you contact us by phone, e-mail or WhatsApp, we process the personal data you provide in order to handle your inquiry
+          and communicate with you.
+        </p>
+        <p>This may include in particular:</p>
+        <ul>
+          <li>Name</li>
+          <li>Phone number</li>
+          <li>E-mail address</li>
+          <li>Address / location of service</li>
+          <li>Content of your inquiry</li>
+          <li>Pictures or other information you provide about the job</li>
+        </ul>
+        <p>
+          The processing is carried out solely for the purpose of handling your inquiry, preparing quotations and carrying out pre-contractual measures.
+        </p>
+
+        <h2>5. Processing of Order-Related Data</h2>
+        <p>
+          If you request or commission a service from us, we process the data required for preparing, carrying out and handling the order.
+        </p>
+        <p>This includes in particular:</p>
+        <ul>
+          <li>Contact details</li>
+          <li>Property or service address</li>
+          <li>Type and scope of the requested service</li>
+          <li>Appointment details</li>
+          <li>Photos, if applicable, to assess the workload</li>
+        </ul>
+
+        <h2>6. Cookies</h2>
+        <p>
+          Our website uses cookies. Cookies are small text files stored on your device that contain certain information.
+        </p>
+        <p>
+          We use necessary cookies to provide basic website functions. In addition, if you have given your consent,
+          we use cookies and similar technologies for analytics purposes.
+        </p>
+        <p>
+          Via our cookie banner, you can choose whether to allow only necessary cookies or also consent to the use of analytics cookies.
+        </p>
+
+        <h2>7. Google Analytics</h2>
+        <p>
+          Subject to your consent, this website uses Google Analytics, a web analytics service provided by Google. Google Analytics uses cookies
+          that enable an analysis of your use of the website.
+        </p>
+        <p>
+          The information generated by the cookie about your use of this website is usually transferred to and stored on Google servers.
+          IP anonymization is activated on this website, so that your IP address is shortened by Google within the European Union or in other contracting states
+          of the Agreement on the European Economic Area before transmission.
+        </p>
+        <p>
+          Processing takes place only on the basis of your consent. You can withdraw your consent at any time with effect for the future
+          by opening the cookie settings or deleting stored cookies in your browser.
+        </p>
+
+        <h2>8. Legal Bases for Processing</h2>
+        <p>The processing of your personal data is based in particular on the following legal grounds:</p>
+        <ul>
+          <li>Consent, if you have expressly given it</li>
+          <li>Performance of pre-contractual measures or a contract</li>
+          <li>Compliance with legal obligations</li>
+          <li>Legitimate interest in a secure and functional website</li>
+        </ul>
+
+        <h2>9. Storage Period</h2>
+        <p>
+          Personal data is stored only for as long as necessary to fulfill the respective purposes or as long as statutory retention obligations exist.
+          As soon as the purpose of storage no longer applies and there are no legal obligations to the contrary, the data will be deleted.
+        </p>
+
+        <h2>10. Disclosure of Data</h2>
+        <p>
+          Your personal data will only be disclosed to third parties if this is permitted by law, if you have consented or if the disclosure is necessary for contract performance.
+        </p>
+        <p>
+          Data may in particular be transmitted to technical service providers, hosting providers or within the framework of communication and analytics services used,
+          insofar as this is necessary for the operation of the website and the handling of your inquiry.
+        </p>
+
+        <h2>11. Your Rights</h2>
+        <p>Under the applicable legal provisions, you have in particular the following rights:</p>
+        <ul>
+          <li>Right to information about the personal data we process</li>
+          <li>Right to rectification of inaccurate data</li>
+          <li>Right to erasure of your data</li>
+          <li>Right to restriction of processing</li>
+          <li>Right to object to processing</li>
+          <li>Right to data portability</li>
+          <li>Right to withdraw consent at any time with effect for the future</li>
+          <li>Right to lodge a complaint with a competent data protection supervisory authority</li>
+        </ul>
+
+        <h2>12. Data Security</h2>
+        <p>
+          We take appropriate technical and organizational measures to protect your data against loss, manipulation, unauthorized access or other unauthorized processing.
+        </p>
+
+        <h2>13. External Links</h2>
+        <p>
+          Our website may contain links to external websites or services, for example WhatsApp. We assume no responsibility for the content and privacy practices of external providers.
+          The privacy notices of the respective provider apply.
+        </p>
+
+        <h2>14. Changes to this Privacy Policy</h2>
+        <p>
+          We reserve the right to adapt this privacy policy so that it always complies with current legal requirements or to implement changes to our services in the privacy policy.
+        </p>
+
+        <div class="note">Status: March 2026</div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>© 2026 AZ Services • All rights reserved</div>
+      <div class="footer-links">
+        <a href="en.html">Home</a>
+        <a href="legal-notice.html">Legal Notice</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
