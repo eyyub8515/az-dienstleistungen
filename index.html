@@ -86,6 +86,7 @@
       gap: 20px;
       padding: 16px 0;
     }
+
     .brand {
       display: flex;
       flex-direction: column;
@@ -482,56 +483,12 @@
       font-size: 0.95rem;
     }
 
-    .webmaster {
-      font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-      margin-top: 6px;
-      display: inline-block;
-      font-family: "Comic Sans MS", "Comic Sans", cursive;
-      color: #2563eb;
-      text-shadow: 1px 1px 0px #ffffff, 2px 2px 0px rgba(0,0,0,0.12);
-      transform: rotate(-1deg);
-      max-width: fit-content;
-    }
-
-    .webmaster:hover {
-      transform: rotate(1deg);
-    }
-
-    .webmaster::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0%;
-      height: 2px;
-      background: linear-gradient(90deg, #1d4ed8, #60a5fa);
-      transition: width 0.3s ease;
-    }
-
-    .webmaster:hover {
-      background-position: right center;
-      transform: translateY(-1px);
-    }
-
-    .webmaster:hover::after {
-      width: 100%;
-    }
-
     .footer-wrap {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
-    }
-
-    .footer-bottom {
-      width: 100%;
-      margin-top: 10px;
-      font-size: 0.95rem;
-      color: var(--muted);
     }
 
     .footer-left {
@@ -559,24 +516,6 @@
       align-items: center;
       justify-content: center;
       background: #ffffff;
-      padding: 10px 18px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      flex: 0 0 auto;
-      min-width: 200px;
-    }
-
-    .footer-logo {
-      height: 180px;
-      width: auto;
-      display: block;
-    }
-
-    .footer-logo-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffffff;
       padding: 8px 14px;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
@@ -589,16 +528,11 @@
       display: block;
     }
 
-    .visitor-box {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #ffffff;
-      padding: 10px 14px;
-      border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      width: fit-content;
-      margin-top: 8px;
+    .footer-bottom {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
     }
 
     .floating-whatsapp {
@@ -697,7 +631,6 @@
         <span>Entrümpelung • Transport • Umzüge • Reinigung • Renovierung</span>
       </div>
       <div class="nav-links">
-        
         <a href="#leistungen">Leistungen</a>
         <a href="#vorteile">Vorteile</a>
         <a href="#bilder">Bilder</a>
@@ -1021,27 +954,19 @@
   <div class="container footer">
     <div class="footer-wrap">
       <div class="footer-left">
-                
         <div class="footer-links">
           <a href="datenschutz.html">Datenschutz</a>
           <a href="impressum.html">Impressum</a>
-        </div>
-
-        <div class="visitor-box">
-          <span style="font-size:1.1rem;">👁️</span>
-          <span style="font-weight:700; color:#0f172a;">Besucher:</span>
-          <span id="visitor-counter" style="font-weight:800; color:#1d4ed8;">0</span>
         </div>
       </div>
 
       <div class="footer-logo-box">
         <img class="footer-logo" src="bilder/logo.png" alt="AZ - Dienstleistungen Logo">
       </div>
+    </div>
 
-      
-      </div>
-
-  <div class="footer-bottom">© AZ - Dienstleistungen • Alle Rechte vorbehalten</div>
+    <div class="footer-bottom">© AZ - Dienstleistungen • Alle Rechte vorbehalten</div>
+  </div>
 
   <a class="floating-whatsapp" href="https://wa.me/4915120600909?text=Hallo%20AZ%20-%20Dienstleistungen%2C%20ich%20habe%20Ihre%20Webseite%20gesehen%20und%20m%C3%B6chte%20mehr%20Infos." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kontakt">
     <span>WhatsApp</span>
@@ -1161,24 +1086,6 @@
         showBanner();
       }
     });
-  </script>
-
-  <script>
-    (function () {
-      try {
-        const key = 'az_counter';
-        let count = localStorage.getItem(key);
-        count = count ? parseInt(count, 10) + 1 : 1;
-        localStorage.setItem(key, String(count));
-
-        const counter = document.getElementById('visitor-counter');
-        if (counter) {
-          counter.textContent = count;
-        }
-      } catch (e) {
-        console.log('Besucherzähler Fehler:', e);
-      }
-    })();
   </script>
 </body>
 </html>
